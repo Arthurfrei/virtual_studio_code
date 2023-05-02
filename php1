@@ -1,0 +1,21 @@
+<?php
+$valor = 5;
+for ($i=0; $i<=$valor; $i++){
+    $soma+=$i;
+}
+echo $soma;
+
+<?php
+$valor = 5;
+$nome = "FPB"
+for ($i=0; $i<=$valor; $i++)
+    echo $nome."<br>";
+    $nome.="FPB";
+
+    ##escrever um codigo que receba 3 valores inteiros e os exiba em ordem crescente
+   ##OBS: os valores devem ser diferentes
+    
+<?php
+$valor = 6;
+$valor = 8;
+$valor = 2;
