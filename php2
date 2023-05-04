@@ -1,0 +1,46 @@
+<?php
+## 1) escrever um código que receba 2 valores inteiros,
+## faça a soma deles e depois multiplique o resultado pela 
+## metade do primeiro valor 
+
+$valoe1 = 10;
+$valor2 = 5;
+  
+echo $resultado = (($valor1 + $valor2)*($valor1/2));
+
+## 2) escreva um código que receba um valor inteiro, 
+## calcule e mostre 15% desse valor 
+
+$valor = 100;
+
+echo $resultado = ($valor * 0.015)*100;
+
+## 3) escreva ume código que receba o valor de um produto 
+## comprado por um cliente, faça a divisão desse valor em 12 vezes 
+## e adicione 1% do valor em cada parcela. mostre o valor
+## das parcelas e valor total que será pago
+
+$valor = 1200;
+
+$juros = $valor*0.12;
+$valor_total = $valor + $juros;
+$parcelas = $valor_total/12;
+echo $valor_total."<br>";
+echo $parcelas;
+
+## 4) escreva um código que receba um valor inteiro.
+## o transforme em anos, diga sua idade e imforme
+## se é ou não maior de idade.
+
+## para anos = 365 dias
+
+$valor = 20000
+$idade = $valor/365;
+echo number_format($idade)."<br>";
+if ($idade >= 18){
+    echo "maior de idade ";
+} else {
+    echo "menor de idade ";
+}
+
+?>
