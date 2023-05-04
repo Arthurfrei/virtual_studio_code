@@ -19,3 +19,5 @@ for ($i=0; $i<=$valor; $i++)
 $valor = 6;
 $valor = 8;
 $valor = 2;
+
+?>
