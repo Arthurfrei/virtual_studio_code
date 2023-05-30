@@ -1,0 +1,17 @@
+<?php
+
+session_start();
+
+ ?>
+
+ </html>
+</body>
+
+<?php echo $_SESSION['nome'];?>
+<br>
+<a href = "login.php">login</a><br>
+<a href = "cadastro.php">cadastrar</a><br>
+<a href = "sair.php">sair</a>
+
+</body>
+</html>
