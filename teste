@@ -1,0 +1,53 @@
+include_once 'conexao.php';
+
+
+ 
+ function __construct(){
+   $this->pdo = new PDO('mysql:host='.$this->host.';dbname='.$this->db, $this->usuario, $this->senha); 
+ }
+ 
+ function login($email, $senha){
+   $stmt = $this->pdo->prepare("SELECT * FROM login WHERE email = :email AND senha = :senha");
+   $stmt->bindValue(":email",$email);
+   $stmt->bindValue(":senha",sha1($senha));
+   $run = $stmt->execute();
+   $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   return $rs;
+ }
+ 
+ function geraChaveAcesso($email){
+   $stmt = $this->pdo->prepare("SELECT * FROM login WHERE email = :email");
+   $stmt->bindValue(":email",$email);
+   $run = $stmt->execute();
+ 
+   $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+   
+    if($rs){
+      $chave = sha1($rs["id"].$rs["senha"]);
+      return $chave;
+    }
+ 
+ }
+ 
+ 
+ function checkChave($email,$chave){
+   $stmt = $this->pdo->prepare("SELECT * FROM login WHERE email = :email");
+   $stmt->bindValue(":email",$email);
+   $run = $stmt->execute();
+ 
+   $rs = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+   if($rs){
+     $chaveCorreta = sha1($rs["id"].$rs["senha"]);
+     if($chave == $chaveCorreta){
+        return $rs["id"];
+     }
+   }
+ }
+ 
+ function setNovaSenha($novasenha,$id){
+   $stmt = $this->pdo->prepare("UPDATE login SET senha = :novasenha WHERE id = :id");
+   $stmt->bindValue(":novasenha",sha1($novasenha));
+   $stmt->bindValue(":id",$id);
+   $run = $stmt->execute();
+ }
