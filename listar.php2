@@ -1,0 +1,25 @@
+<html>
+<head>
+ <meta....>
+ <meta....>
+ <link rel = "stylesheet" type = "text/css" href = "estilo.css">
+</head>
+</body>
+
+<?php echo $_SESSION['nome'];?><br>
+<center>
+    <h1>lista de usuarios</h1>
+
+    <?php while($dado = $con->fetch_array())  ?> 
+        <tr> 
+          <td><?php echo $dado['usu_nome']; ?></td>
+          <td><?php echo $dado['usu_login']; ?></td> 
+          <td><?php echo $dado['usu_senha']; ?></td> 
+          <td><?php echo date('d/m/Y', strtotime($dado['usu_datadecadastro'])); ?></td> 
+          <td> 
+
+
+
+<center>
+</body>
+</html>
