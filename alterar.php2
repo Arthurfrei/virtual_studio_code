@@ -1,0 +1,15 @@
+<?php
+
+ include ("conexao.php");
+ $nome = isset($_POST['nome'])? $_POST['nome']:'';
+ $login = isset($_POST['login'])? $_POST['login']:'';
+ $senha = isset($_POST['nova senha'])? $_POST['nova senha']:'';
+ 
+ $insert = "insert into login (nova senha)
+          values
+          ('$senha')";
+ $query = mysqli_query ($conexao, $insert)
+
+
+
+?>
