@@ -1,0 +1,20 @@
+<?php
+session_start();
+include_once('conexao.php');
+
+$login = isset($_POST['login']) ? $_POST['login'] : '';
+$senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+$nova_senha = isset($_POST['nova senha']) ? $_POST['nova senha'] : '';
+
+$select = "select nome, login, senha from login where login = '$login' and senha = '$senha'";
+$query = mysqli_query ($conexao, $select);
+$dados = mysqli_fetch_row ($query);
+
+$update = "UPDATE login SET senha= $nova_senha WHERE senha= null";
+
+if ($login == $dados && $senha == null){
+    echo "senha alterada com sucesso";
+}else{
+    echo "senha não alterada";
+}
+?>
