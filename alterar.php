@@ -1,12 +1,23 @@
-<?php
-include ("conexao.php");
-$nome = isset($_POST['nome'])? $_POST['nome']:'';
-$login = isset($_POST['login'])? $_POST['login']:'';
-$senha = isset($_POST['senha'])? $_POST['senha']:'';
+<html>
+<head>
+ <meta....>
+ <meta....>
+ <link rel = "stylesheet" type = "text/css" href = "estilo.css">
+</head>
+<body>
+    <center>
+    <h1>alterar senha</h1>
+    <form id = "alterar" action = "senha.php" method = "post">
+    <label for="login">Login:</label>
+  <input type="text" id="login" name="login"><br><br>
+  <label for="senha">Senha atual:</label>
+  <input type="password" id="senha" name="senha"><br><br>
+  <label for="senha_nova">Nova senha:</label>
+  <input type="password" id="senha_nova" name="senha_nova"><br><br>
+    <input type = "submit" name = "editar" value = "editar">
+</center>
 
-$insert = "insert into login (nome, login, senha)
-         values
-         ('$nome', '$login', '$senha')";
-$query = mysqli_query ($conexao, $insert);
+</body>
+</html>
 
-?>
+
